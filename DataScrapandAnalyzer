@@ -115,9 +115,8 @@ plt.figure(figsize=(20,20))
 plt.imshow(wordcloudp)
 
 mergedcommentsstrimmed={key:val for key, val in mergedcomments.items() if val > 2}
-testing=pd.Series(mergedcommentsstrimmed)
-print(type(testing))
+plotdata=pd.Series(mergedcommentsstrimmed)
 fig, ax = plt.subplots(figsize=(30,20))
-all_plot = sns.barplot(x=testing.index, y=testing.values, ax=ax)
+all_plot = sns.barplot(x=plotdata.index, y=plotdata.values, ax=ax)
 plt.xticks(rotation=30);
 plt.savefig('Histogram.png')
