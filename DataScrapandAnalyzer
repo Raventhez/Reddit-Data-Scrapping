@@ -100,9 +100,10 @@ for index in range(len(frequencypoststen)):
 mergedcomments = {}
 mergedposts={}
 for index in range(len(dictionaryfcs)):
-  mergedcomments.update(dictionaryfcs[index])
+  mergedcomments=mergedcomments+ Counter(dictionaryfcs[index])
 for index in range(len(dictionaryfps)):
-  mergedposts.update(dictionaryfps[index])
+  mergedposts=mergedposts + Counter(dictionaryfps[index])
+
 wordcloudc = WordCloud(background_color="white",width=1000,height=1000, max_words=100, normalize_plurals=False).generate_from_frequencies(mergedcomments)
 plt.savefig('Word Cloud Comment Body.png')
 
